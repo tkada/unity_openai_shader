@@ -196,6 +196,8 @@ public class OpenAIShaderCreator : EditorWindow
                 }
             }
         }
+
+        Repaint(); 
     }
 
     // コードブロック（```）で囲まれた部分だけ抽出
