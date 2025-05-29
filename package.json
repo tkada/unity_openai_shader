@@ -4,6 +4,12 @@
   "displayName": "OpenAI Shader Creator",
   "description": "OpenAI Shader Creator for Unity",
   "unity": "2020.1",
+  "keywords": [
+    "editor"
+  ],
+  "author": {
+    "name": "tkada"
+  },
   "dependencies": {
     "com.unity.editorcoroutines": "1.0.0"
   }
