@@ -19,3 +19,7 @@ Enter your OpenAI API KEY in the `API KEY` field.
 Type your prompt in the `Prompt` field and click `Create Shader`.
 
 After a short while, the shader will be generated. You can either copy the shader code with `Copy Shader Code` or save it with `Save as Shader`.
+
+## Related Projects
+
+- [unity_openai_texture](https://github.com/tkada/unity_openai_texture)
