@@ -88,7 +88,7 @@ public class OpenAIShaderCreator : EditorWindow
         EditorGUILayout.Space();
         if (GUILayout.Button("Create Shader") && !isLoading)
         {
-            shaderCode = "Generating...";
+            shaderCode = string.Empty;
             lastResponse = "";
             EditorCoroutineUtility.StartCoroutine(GenerateShaderCoroutine(prompt), this);
         }
@@ -105,11 +105,28 @@ public class OpenAIShaderCreator : EditorWindow
         // Copyボタンを追加
         if (!string.IsNullOrEmpty(shaderCode))
         {
+            EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Copy Shader Code"))
             {
                 EditorGUIUtility.systemCopyBuffer = shaderCode;
                 ShowNotification(new GUIContent("Copied to clipboard!"));
             }
+            if (GUILayout.Button("Save as Shader"))
+            {
+                string path = EditorUtility.SaveFilePanel(
+                    "Save Shader",
+                    "Assets",
+                    "NewShader.shader",
+                    "shader"
+                );
+                if (!string.IsNullOrEmpty(path))
+                {
+                    System.IO.File.WriteAllText(path, shaderCode, Encoding.UTF8);
+                    AssetDatabase.Refresh();
+                    ShowNotification(new GUIContent("Shader saved!"));
+                }
+            }
+            EditorGUILayout.EndHorizontal();
         }
 
         _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition,GUILayout.Height(200));
