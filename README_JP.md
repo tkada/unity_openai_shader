@@ -19,3 +19,6 @@ https://github.com/tkada/unity_openai_shader.git
 `Prompt`にプロンプトを入力して`Create Shader`をクリックします
 
 しばらくするとShaderが作成されるので、`Copy Shader Code`でコピーするか、`Save as Shade`で保存します
+
+## 関連プロジェクト
+- [unity_openai_texture](https://github.com/tkada/unity_openai_texture)
